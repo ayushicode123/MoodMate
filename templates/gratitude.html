@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gratitude Wall - MoodMate</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <h1>💖 Gratitude Wall 💖</h1>
+  <h3>Write what you're grateful for today...</h3>
+
+  <!-- Gratitude Form -->
+  <form action="{{ url_for('gratitude') }}" method="post">
+    <textarea name="gratitude" rows="5" cols="50" placeholder="I am grateful for..." required></textarea><br><br>
+    <button type="submit">Save Gratitude</button>
+  </form>
+
+  <!-- Gratitude Entries -->
+  <div class="section">
+    <h2>🌸 Your Gratitude List:</h2>
+    {% if entries %}
+      <ul class="history">
+        {% for entry in entries %}
+          <li>{{ entry }}</li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>No gratitude entries yet. Start writing now!</p>
+    {% endif %}
+  </div>
+
+  <br>
+  <a href="/"><button class="back-home">🏡 Back to Home</button></a>
+
+</body>
+</html>

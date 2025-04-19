@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MoodMate - Healing Chatbot</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    .chat-box {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      border-radius: 10px;
+      background: #f9f9f9;
+    }
+    .message {
+      margin-bottom: 15px;
+    }
+    .user-message {
+      text-align: right;
+      color: #0d47a1;
+      font-weight: bold;
+    }
+    .bot-message {
+      text-align: left;
+      color: #2e7d32;
+      font-weight: bold;
+    }
+    .input-area {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+    }
+    input[type="text"] {
+      width: 70%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    button {
+      margin-left: 10px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      border: none;
+      background-color: #26a69a;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #00897b;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 style="text-align:center;">💬 MoodMate - Healing Chatbot</h1>
+
+  <div class="chat-box">
+    {% for chat in chat_history %}
+      <div class="message user-message">You: {{ chat.user }}</div>
+      <div class="message bot-message">MoodMate: {{ chat.bot }}</div>
+    {% endfor %}
+  </div>
+
+  <form method="POST" class="input-area">
+    <input type="text" name="message" placeholder="Type your feeling..." required>
+    <button type="submit">Send</button>
+  </form>
+
+  <div style="text-align:center; margin-top:20px;">
+    <a href="{{ url_for('clear_chat') }}"><button>🧹 Clear Chat</button></a>
+    <a href="/"><button>🏡 Back Home</button></a>
+  </div>
+
+</body>
+</html>

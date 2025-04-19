@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Mobile Responsive -->
+  <title>Relax - MoodMate</title>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+  <!-- Favicon (Optional) -->
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <img src="{{ url_for('static', filename='logo.webp') }}" alt="MoodMate Logo" class="logo">
+    <h1>MoodMate</h1>
+    <p>Your Emotional Wellness Partner</p>
+  </section>
+
+  <!-- Background Music -->
+  <audio autoplay loop>
+    <source src="{{ url_for('static', filename='relax_music.mp3') }}" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Relaxation Content -->
+  <section class="card">
+    <h2>Breathing Relaxation</h2>
+    <div class="breathing-circle"></div>
+    <p class="relax-instruction">Inhale... Hold... Exhale... and Smile.</p>
+    <a href="/"><button class="back-home">Back to Home</button></a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>Made with Care by MoodMate Team © 2025</p>
+  </footer>
+
+</body>
+</html>

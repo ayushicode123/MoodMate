@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Mood Journal - MoodMate</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <h1>📓 My Mood Journal 📓</h1>
+  <h3>Write your thoughts and reflections...</h3>
+
+  <!-- Journal Writing Form -->
+  <form action="{{ url_for('save_journal') }}" method="post">
+    <textarea name="entry" rows="8" cols="50" placeholder="Write here..." required></textarea><br><br>
+    <button type="submit">Save Entry</button>
+  </form>
+
+  <!-- Past Journal Entries -->
+  <div class="section">
+    <h2>📝 Past Journal Entries:</h2>
+    {% if entries %}
+      <ul class="history">
+        {% for entry in entries %}
+          <li>{{ entry }}</li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>No entries yet. Start writing today!</p>
+    {% endif %}
+  </div>
+
+  <br><br>
+  <a href="/"><button class="back-home">🏡 Back to Home</button></a>
+
+</body>
+</html>

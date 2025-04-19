@@ -1,0 +1,211 @@
+/* ========== Base Setup ========== */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to bottom, #f9f9f9, #e0f7fa);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #424242;
+}
+
+/* Hero Section */
+.hero {
+    padding: 50px 20px;
+    background: linear-gradient(to right, #26a69a, #64b5f6);
+    color: white;
+    animation: fadeIn 2s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.hero img.logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3.2rem;
+    margin: 10px 0;
+}
+
+.hero p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+}
+
+/* Search Form */
+.search-form {
+    margin-top: 20px;
+}
+
+.search-form input[type="text"] {
+    width: 60%;
+    padding: 14px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.search-form button {
+    background: linear-gradient(to right, #26a69a, #64b5f6);
+    color: white;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: all 0.3s ease;
+}
+
+.search-form button:hover {
+    background: linear-gradient(to right, #64b5f6, #26a69a);
+    transform: scale(1.05);
+}
+
+/* Card Sections */
+.card {
+    background: linear-gradient(to bottom right, #ffffff, #e0f7fa);
+    padding: 30px;
+    margin: 30px auto;
+    width: 85%;
+    border-radius: 20px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #26a69a;
+}
+
+.card h3 {
+    font-family: 'Poppins', sans-serif;
+    color: #555;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.card ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.card li {
+    background: #e0f2f1;
+    padding: 10px 20px;
+    margin: 8px 0;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    display: inline-block;
+}
+
+/* Select + Input */
+select, input[type="text"], textarea {
+    width: 60%;
+    padding: 14px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 1rem;
+    outline: none;
+}
+
+/* Buttons General */
+button {
+    background: linear-gradient(to right, #26a69a, #64b5f6);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 8px;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(to right, #64b5f6, #26a69a);
+    transform: scale(1.05);
+}
+
+/* Image Gallery */
+.image-gallery img {
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+    background-color: #e0f7fa;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: #424242;
+    border-top: 1px solid #c8e6c9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .search-form input[type="text"],
+    select, input[type="text"], textarea {
+        width: 80%;
+    }
+
+    .search-form button {
+        margin-top: 10px;
+        width: 80%;
+    }
+}
+
+/* ========== Breathing Circle Animation ========== */
+.breathing-circle {
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, #a7ffeb, #1de9b6);
+  border-radius: 50%;
+  margin: 30px auto;
+  animation: breathe 8s infinite;
+}
+
+@keyframes breathe {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+}
+
+.relax-instruction {
+  margin-top: 20px;
+  font-size: 1.5rem;
+  color: #424242;
+}
+
+  
+  
+  
+
+
+

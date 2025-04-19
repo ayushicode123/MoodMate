@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MoodMate - Your Emotional Wellness Partner</title>
+
+  <!-- Load Professional Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto&display=swap" rel="stylesheet">
+
+  <!-- Connect Final CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+  <!-- Favicon (Optional) -->
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.ico') }}">
+
+  <!-- Chart.js (Optional, only if you keep Mood Tracker) -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+  <!-- 🌟 HERO SECTION -->
+  <section class="hero">
+    <img src="{{ url_for('static', filename='logo.webp') }}" alt="MoodMate Logo" class="logo">
+    <h1>MoodMate</h1>
+    <p>Your Emotional Wellness Partner</p>
+
+    <!-- 🔍 Feelings Search Bar -->
+    <form method="POST" action="/search" class="search-form">
+      <input type="text" name="search_query" placeholder="How are you feeling today?" required>
+      <button type="submit">Search Healing</button>
+    </form>
+  </section>
+
+  <!-- 🌟 Daily Motivation -->
+  <section class="card">
+    <h2>Today's Motivation</h2>
+    <p>{{ daily_motivation }}</p>
+  </section>
+
+  <!-- 🎯 Healing Kit Mood Selector -->
+  <section class="card">
+    <h2>Find Healing by Mood</h2>
+    <form method="POST" action="#healing">
+      <select name="mood" required>
+        <option value="">--Select Mood--</option>
+        {% for mood in moods %}
+          <option value="{{ mood }}">{{ mood }}</option>
+        {% endfor %}
+      </select>
+      <br><br>
+      <button type="submit">Get Healing Kit</button>
+    </form>
+  </section>
+
+  {% if mood_content %}
+    <a id="healing"></a>
+    <section class="card">
+      <h2>Your Healing Kit</h2>
+
+      <h3>Quotes:</h3>
+      <ul>
+        {% for quote in mood_content.quotes %}
+          <li>{{ quote }}</li>
+        {% endfor %}
+      </ul>
+
+      <h3>Music:</h3>
+      <a href="{{ mood_content.music }}" target="_blank">
+        <button>Listen Music</button>
+      </a>
+
+      <h3>Positive Activities:</h3>
+      <ul>
+        {% for activity in mood_content.activities %}
+          <li>{{ activity }}</li>
+        {% endfor %}
+      </ul>
+
+      <h3>Relaxation Tip:</h3>
+      <p>{{ mood_content.relaxation_tip }}</p>
+
+      <h3>Motivational Story:</h3>
+      <p>{{ mood_content.story }}</p>
+
+      <h3>Affirmations:</h3>
+      <ul>
+        {% for affirmation in mood_content.affirmations %}
+          <li>{{ affirmation }}</li>
+        {% endfor %}
+      </ul>
+
+      <h3>Motivational Images:</h3>
+      <div class="image-gallery">
+        {% for img in mood_content.images %}
+          <img src="/static/images/{{ img }}" alt="Motivational Image">
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %}
+
+  <!-- 🛡️ Explore More -->
+  <section class="card">
+    <h2>Explore More</h2>
+    <a href="{{ url_for('relax') }}"><button>Relaxation</button></a>
+    <a href="{{ url_for('journal') }}"><button>Journal</button></a>
+    <a href="{{ url_for('gratitude') }}"><button>Gratitude Wall</button></a>
+    <a href="{{ url_for('chat') }}"><button>Healing Chatbot</button></a>
+  </section>
+
+  <!-- 🎯 Daily Challenge -->
+  <section class="card">
+    <h2>Daily Healing Challenge</h2>
+    <p id="challenge-text">Click below to get a challenge!</p>
+    <button onclick="fetchChallenge()">Get Challenge</button>
+  </section>
+
+  <!-- Javascript for Challenge and Mood Tracker -->
+  <script>
+    function fetchChallenge() {
+      fetch('/get_challenge')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('challenge-text').innerText = data;
+        });
+    }
+
+    {% if history %}
+    const moodCounts = {};
+    {% for item in history %}
+      moodCounts["{{ item }}"] = (moodCounts["{{ item }}"] || 0) + 1;
+    {% endfor %}
+
+    const ctx = document.getElementById('moodChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: Object.keys(moodCounts),
+        datasets: [{
+          label: 'Mood Distribution',
+          data: Object.values(moodCounts),
+          backgroundColor: ['#26a69a', '#64b5f6', '#ba68c8', '#ffb74d', '#e57373'],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'bottom',
+          }
+        }
+      }
+    });
+    {% endif %}
+  </script>
+
+</body>
+</html>
+

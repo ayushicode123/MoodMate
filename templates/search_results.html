@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Search Results - MoodMate</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <h1>🔍 Search Results for "{{ query }}"</h1>
+
+  {% if quotes %}
+    <div class="section">
+      <h2>✨ Matching Quotes:</h2>
+      {% for item in quotes %}
+        <p>"{{ item.text }}"<br><i>Confidence: {{ '%.2f'|format(item.score * 100) }}%</i> (Mood: {{ item.mood }})</p><hr>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  {% if activities %}
+    <div class="section">
+      <h2>💡 Matching Activities:</h2>
+      {% for item in activities %}
+        <p>"{{ item.text }}"<br><i>Confidence: {{ '%.2f'|format(item.score * 100) }}%</i> (Mood: {{ item.mood }})</p><hr>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  {% if affirmations %}
+    <div class="section">
+      <h2>🌟 Matching Affirmations:</h2>
+      {% for item in affirmations %}
+        <p>"{{ item.text }}"<br><i>Confidence: {{ '%.2f'|format(item.score * 100) }}%</i> (Mood: {{ item.mood }})</p><hr>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  {% if tips %}
+    <div class="section">
+      <h2>🧘 Matching Relaxation Tips:</h2>
+      {% for item in tips %}
+        <p>"{{ item.text }}"<br><i>Confidence: {{ '%.2f'|format(item.score * 100) }}%</i> (Mood: {{ item.mood }})</p><hr>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  {% if songs %}
+    <div class="section">
+      <h2>🎶 Uplifting Songs:</h2>
+      {% for song in songs %}
+        <p><a href="{{ song }}" target="_blank">🎵 Listen on YouTube</a></p><hr>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  {% if videos %}
+    <div class="section">
+      <h2>📹 Healing YouTube Videos:</h2>
+      {% for vid in videos %}
+        <p><a href="{{ vid }}" target="_blank">📹 Watch Video</a></p><hr>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  {% if fallback %}
+    <div class="section" style="background-color: #f0f8ff; padding: 20px; border-radius: 8px;">
+      <h2>💖 Healing Suggestion:</h2>
+      <p style="font-size: 20px;">"{{ fallback }}"</p>
+    </div>
+  {% endif %}
+
+  {% if not (quotes or activities or affirmations or tips or fallback or songs or videos) %}
+    <h3>No matching results found 😔</h3>
+  {% endif %}
+
+  <br>
+  <a href="/"><button class="back-home">🏡 Back to Home</button></a>
+
+</body>
+</html>

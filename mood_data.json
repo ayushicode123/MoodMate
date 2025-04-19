@@ -1,0 +1,113 @@
+{
+    "Happy": {
+      "quotes": [
+        "Happiness is a journey, not a destination.",
+        "Smile, it's the key that fits the lock of everybody's heart."
+      ],
+      "music": "https://open.spotify.com/playlist/37i9dQZF1DXdPec7aLTmlC",
+      "activities": [
+        "Dance to your favorite song for 5 minutes.",
+        "Write 3 things you are grateful for."
+      ],
+      "relaxation_tip": "Close your eyes and imagine a place that makes you feel safe and happy.",
+      "video": "https://www.youtube.com/watch?v=ZbZSe6N_BXs",
+      "story": "Once there was a boy who carried a sunshine in his pocket. Whenever someone was sad, he would pull it out and share the light. The boy realized that by sharing happiness, his own never diminished.",
+      "affirmations": [
+        "I radiate happiness and positivity.",
+        "Today, I choose joy."
+      ],
+      "images": [
+        "happy1.jpg",
+        "happy2.jpg"
+      ]
+    },
+    "Sad": {
+      "quotes": [
+        "Tears are words the heart can't express.",
+        "Every storm runs out of rain eventually."
+      ],
+      "music": "https://open.spotify.com/playlist/37i9dQZF1DX7qK8ma5wgG1",
+      "activities": [
+        "Write your feelings in a journal.",
+        "Watch a comforting movie you loved as a child."
+      ],
+      "relaxation_tip": "Take slow deep breaths. Inhale positivity, exhale sadness.",
+      "video": "https://www.youtube.com/watch?v=8SbUC-UaAxE",
+      "story": "A little bird lost in a storm found shelter under a large oak tree. Though frightened, the bird realized it was stronger for having faced the wind.",
+      "affirmations": [
+        "This feeling is temporary. I am healing.",
+        "I allow myself to feel and move forward."
+      ],
+      "images": [
+        "sad1.jpg",
+        "sad2.jpg"
+      ]
+    },
+    "Curious": {
+      "quotes": [
+        "The cure for boredom is curiosity. There is no cure for curiosity.",
+        "Always be on the lookout for the presence of wonder."
+      ],
+      "music": "https://open.spotify.com/playlist/37i9dQZF1DWUa8ZRTfalHk",
+      "activities": [
+        "Read an article about a random new topic.",
+        "Explore a museum or library online."
+      ],
+      "relaxation_tip": "Let your curiosity wander; allow yourself to explore without judgment.",
+      "video": "https://www.youtube.com/watch?v=J9w6bMnf6VY",
+      "story": "A cat curious about the stars climbed the tallest tree. Though it couldn’t touch the sky, it found new places no other cat had seen before.",
+      "affirmations": [
+        "Curiosity leads me to new adventures.",
+        "I grow through exploring new ideas."
+      ],
+      "images": [
+        "curious1.jpg",
+        "curious2.jpg"
+      ]
+    },
+    "Angry": {
+      "quotes": [
+        "Speak when you are angry and you will make the best speech you will ever regret.",
+        "Holding onto anger is like drinking poison and expecting the other person to die."
+      ],
+      "music": "https://open.spotify.com/playlist/37i9dQZF1DWYxwmBaMqxsl",
+      "activities": [
+        "Go for a fast walk or run to burn the energy.",
+        "Write a letter to your anger (and tear it up)."
+      ],
+      "relaxation_tip": "Clench your fists, then slowly release. Let go of tension physically and mentally.",
+      "video": "https://www.youtube.com/watch?v=d-diB65scQU",
+      "story": "There once was a raging river that destroyed everything in its path. But when guided into channels, it brought water to dry lands. Anger, too, can be channeled for growth.",
+      "affirmations": [
+        "I am in control of my emotions.",
+        "I breathe out anger, I breathe in calm."
+      ],
+      "images": [
+        "angry1.jpg",
+        "angry2.jpg"
+      ]
+    },
+    "Excited": {
+      "quotes": [
+        "Excitement is the fuel for success.",
+        "Today is full of opportunities to shine."
+      ],
+      "music": "https://open.spotify.com/playlist/37i9dQZF1DX1s9knjP51Oa",
+      "activities": [
+        "Start a new creative project you've been putting off!",
+        "Share your excitement by calling someone you love."
+      ],
+      "relaxation_tip": "Channel your excitement into positive action steps. Prioritize one small task at a time.",
+      "video": "https://www.youtube.com/watch?v=HgzGwKwLmgM",
+      "story": "A young inventor was so excited about her ideas that she stayed up all night. By morning, she had built something the world had never seen — excitement fuels innovation.",
+      "affirmations": [
+        "My excitement is a powerful creative force.",
+        "I embrace my energy and passion."
+      ],
+      "images": [
+        "excited1.jpg",
+        "excited2.jpg"
+      ]
+    }
+  }
+  
